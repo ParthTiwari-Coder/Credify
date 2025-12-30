@@ -1,0 +1,454 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #000000;
+  color: #ffffff;
+}
+
+.container {
+  width: 470px;
+  background: #0a0a0a;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  background: black;
+  padding: 24px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.5px;
+  background: linear-gradient(to right, #fff, #888);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 13px;
+  opacity: 0.7;
+  margin-top: 4px;
+  font-weight: 400;
+  color: #888;
+}
+
+.settings-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.settings-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
+}
+
+/* Settings Panel */
+.settings-panel {
+  background: #111;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.setting-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.setting-row select {
+  padding: 6px 12px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  font-size: 13px;
+  background: #222;
+  color: white;
+  cursor: pointer;
+  min-width: 150px;
+}
+
+.setting-row .toggle {
+  width: 40px;
+  height: 22px;
+  cursor: pointer;
+  accent-color: #3b82f6;
+}
+
+/* Sections */
+.section {
+  padding: 24px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.section:last-of-type {
+  border-bottom: none;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.section-header svg path {
+  stroke: #666;
+}
+
+/* Action Buttons */
+.action-btn {
+  width: 100%;
+  padding: 20px 24px;
+  border: none;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  margin-bottom: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.7);
+  filter: brightness(1.1);
+}
+
+.action-btn:active {
+  transform: translateY(0);
+}
+
+.action-btn svg {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.action-btn span {
+  flex: 1;
+  text-align: left;
+}
+
+/* Button Colors - 4 Distinct Gradients */
+
+/* 1. Check Entire Page -> Blue Gradient */
+.action-btn.primary {
+  background: linear-gradient(135deg, #60A5FA 0%, #2563EB 100%);
+  color: white;
+}
+
+/* 2. Check Selected Text -> Orange/Gold Gradient */
+.action-btn.secondary {
+  background: linear-gradient(135deg, #FBBF24 0%, #D97706 100%);
+  color: white;
+  /* Or darker text like #92400e if needed for contrast, but white implies vibrancy */
+  color: #fff;
+}
+
+/* 3. Check Video -> Purple Gradient */
+.action-btn.video {
+  background: linear-gradient(135deg, #C084FC 0%, #7C3AED 100%);
+  color: white;
+}
+
+/* 4. Extract Keyframes -> Green Gradient */
+.action-btn.keyframe {
+  background: linear-gradient(135deg, #34D399 0%, #059669 100%);
+  color: white;
+}
+
+/* Action Description */
+.action-description {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 24px;
+  padding-left: 4px;
+  line-height: 1.5;
+}
+
+/* Status */
+.status {
+  padding: 12px 20px;
+  font-size: 13px;
+  color: #aaa;
+  background: #111;
+  text-align: center;
+  font-weight: 500;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.status.active {
+  background: rgba(34, 197, 94, 0.1);
+  color: #4ade80;
+}
+
+.status.error {
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+}
+
+/* Stop Button */
+.stop-btn {
+  width: calc(100% - 40px);
+  margin: 0 20px 20px 20px;
+  padding: 14px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.stop-btn:hover {
+  background: #dc2626;
+  transform: translateY(-1px);
+}
+
+.stop-btn:active {
+  transform: translateY(0);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.settings-panel {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* RESULTS VIEW STYLES */
+.hidden {
+  display: none !important;
+}
+
+.back-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.results-content {
+  padding: 20px;
+}
+
+.center-content {
+  text-align: center;
+  padding: 40px 0;
+  color: #888;
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #333;
+  border-top: 3px solid #3b82f6;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.summary-card {
+  display: flex;
+  justify-content: space-around;
+  background: #111;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat span {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.stat label {
+  font-size: 11px;
+  color: #888;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.text-red {
+  color: #f87171 !important;
+}
+
+.text-green {
+  color: #4ade80 !important;
+}
+
+.claim-card {
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.claim-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.claim-text {
+  font-size: 14px;
+  font-style: italic;
+  color: #ddd;
+  margin: 0;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.verdict-badge {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.verdict-false {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+.verdict-misleading {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+}
+
+.verdict-true {
+  background: rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+}
+
+.verdict-unverified {
+  background: rgba(148, 163, 184, 0.2);
+  color: #94a3b8;
+}
+
+.claim-explanation {
+  font-size: 12px;
+  color: #aaa;
+  line-height: 1.5;
+  margin-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 8px;
+}
+
+.source-list {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.source-tag {
+  background: #222;
+  color: #ccc;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+}

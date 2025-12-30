@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Fact Check Results | TrueLens</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="shield-icon">
+                    <path d="M12 2L3 7V12C3 17.52 7 22 12 24C17 22 21 17.52 21 12V7L12 2Z" fill="#3b82f6" />
+                    <path d="M9 12L11 14L15 10" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+                <h1>TrueLens Report</h1>
+            </div>
+            <div id="session-info" class="session-info">Session ID: Loading...</div>
+        </header>
+
+        <main id="main-content">
+            <!-- Loading State -->
+            <div id="loading-state" class="center-content">
+                <div class="spinner"></div>
+                <h2>Verifying Claims...</h2>
+                <p id="progress-text">Processing pipeline stages</p>
+                <div class="progress-steps">
+                    <div class="step active">Extracting</div>
+                    <div class="step">Analyzing</div>
+                    <div class="step">Verifying</div>
+                </div>
+            </div>
+
+            <!-- Error State -->
+            <div id="error-state" class="center-content hidden">
+                <div class="error-icon">⚠️</div>
+                <h2>Something went wrong</h2>
+                <p id="error-message">Could not load results.</p>
+                <button onclick="location.reload()" class="retry-btn">Retry</button>
+            </div>
+
+            <!-- Results Content -->
+            <div id="results-content" class="hidden">
+                <!-- Summary Card -->
+                <div class="summary-card">
+                    <div class="summary-stat">
+                        <span class="stat-value" id="total-claims">0</span>
+                        <span class="stat-label">Total Claims</span>
+                    </div>
+                    <div class="summary-stat">
+                        <span class="stat-value text-red" id="false-claims">0</span>
+                        <span class="stat-label">False</span>
+                    </div>
+                    <div class="summary-stat">
+                        <span class="stat-value text-orange" id="misleading-claims">0</span>
+                        <span class="stat-label">Misleading</span>
+                    </div>
+                    <div class="summary-stat">
+                        <span class="stat-value text-green" id="verified-claims">0</span>
+                        <span class="stat-label">Verified</span>
+                    </div>
+                </div>
+
+                <!-- Claims List -->
+                <div id="claims-list" class="claims-list">
+                    <!-- Claims will be injected here -->
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

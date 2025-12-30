@@ -1,0 +1,6 @@
+backend/sessions/
+backend/results/
+.env
+venv/
+__pycache__/
+*.pyc

@@ -1,0 +1,213 @@
+.ocr-overlay-container {
+  position: fixed;
+  left: 50%;
+  bottom: 8%;
+  transform: translateX(-50%);
+  /* pointer-events: none; Let clicks pass through */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 50px;
+  z-index: 2147483647;
+  /* Max z-index */
+  background: transparent;
+  /* background: rgba(0, 0, 0, 0.5); For debugging */
+  border: none;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.ocr-subtitle {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ocr-subtitle.visible {
+  opacity: 1;
+}
+
+.subtitle-content {
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.subtitle-meta {
+  margin-top: 6px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.language-badge,
+.confidence-badge,
+.timestamp-badge {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.ocr-notification {
+  background: rgba(0, 0, 0, 0.78);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.ocr-notification.visible {
+  opacity: 1;
+}
+
+.ocr-notification.error {
+  background: rgba(200, 0, 0, 0.85);
+}
+
+/* Fact Check Results */
+/* Fact Check Results */
+.fact-check-result-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  width: 400px;
+  /* Slightly wider for better reading */
+  max-height: 80vh;
+  /* Ensure it fits in viewport */
+  overflow-y: auto;
+  background-color: rgba(16, 16, 16, 0.98);
+  /* Very dark opaque background */
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  z-index: 2147483647;
+  /* Ensure on top */
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: none;
+}
+
+.fact-check-result-container.visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  pointer-events: auto;
+}
+
+
+
+.result-header {
+  padding: 12px 16px;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.result-title {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.result-close {
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.result-close:hover {
+  color: white;
+}
+
+.result-stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-item {
+  font-size: 12px;
+  color: #ccc;
+  text-align: center;
+}
+
+.stat-val {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
+
+.stat-val.error {
+  color: #ff5252;
+}
+
+.stat-val.warning {
+  color: #ffb74d;
+}
+
+.result-claims {
+  padding: 10px;
+}
+
+.claim-item {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.claim-item:last-child {
+  border-bottom: none;
+}
+
+.claim-text {
+  font-style: italic;
+  font-size: 13px;
+  color: #ddd;
+  margin-bottom: 4px;
+}
+
+.claim-verdict {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.verdict-false {
+  background-color: #ff5252;
+  color: white;
+}
+
+.verdict-misleading {
+  background-color: #ffb74d;
+  color: black;
+}
+
+.verdict-unknown {
+  background-color: #777;
+  color: white;
+}
+
+.claim-explanation {
+  font-size: 12px;
+  color: #aaa;
+  line-height: 1.4;
+}

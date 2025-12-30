@@ -1,0 +1,77 @@
+{
+    "tier1_authoritative": {
+        "medical": [
+            "who.int",
+            "cdc.gov",
+            "nih.gov",
+            "fda.gov",
+            "mayoclinic.org",
+            "hopkinsmedicine.org",
+            "mohfw.gov.in",
+            "icmr.gov.in",
+            "nhp.gov.in",
+            "aiims.edu"
+        ],
+        "scientific": [
+            "nature.com",
+            "science.org",
+            "pubmed.ncbi.nlm.nih.gov",
+            "sciencedirect.com",
+            "arxiv.org",
+            "dst.gov.in",
+            "csir.res.in",
+            "isro.gov.in",
+            "iisc.ac.in"
+        ],
+        "government": [
+            "india.gov.in",
+            "pib.gov.in",
+            "mohfw.gov.in",
+            "mea.gov.in",
+            "eci.gov.in",
+            "mygov.in",
+            "prsindia.org"
+        ],
+        "climate": [
+            "ipcc.ch",
+            "nasa.gov",
+            "noaa.gov",
+            "moef.gov.in",
+            "imd.gov.in",
+            "teriin.org"
+        ],
+        "financial": [
+            "rbi.org.in",
+            "sebi.gov.in",
+            "mca.gov.in",
+            "finmin.nic.in",
+            "irdai.gov.in",
+            "pfrda.org.in",
+            "nseindia.com",
+            "bseindia.com"
+        ]
+    },
+    "tier2_context": {
+        "news": [
+            "reuters.com",
+            "apnews.com",
+            "bbc.com",
+            "npr.org",
+            "thehindu.com",
+            "indianexpress.com",
+            "hindustantimes.com",
+            "livemint.com",
+            "scroll.in",
+            "ndtv.com"
+        ],
+        "fact_checkers": [
+            "snopes.com",
+            "factcheck.org",
+            "politifact.com",
+            "altnews.in",
+            "boomlive.in",
+            "factly.in",
+            "newschecker.in"
+        ]
+    }
+}

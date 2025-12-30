@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Credify</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+</head>
+
+<body>
+  <div class="container">
+    <!-- MAIN VIEW -->
+    <div id="main-view">
+      <!-- Header -->
+      <div class="header">
+        <div>
+          <h1>Credify</h1>
+          <p class="subtitle">Verify claims instantly</p>
+        </div>
+        <button class="settings-btn" id="settingsBtn">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path
+              d="M10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5Z"
+              stroke="white" stroke-width="1.5" />
+            <path
+              d="M16.25 10C16.25 10.625 16.75 11.125 17.375 11.125C18 11.125 18.5 10.625 18.5 10C18.5 9.375 18 8.875 17.375 8.875C16.75 8.875 16.25 9.375 16.25 10Z"
+              stroke="white" stroke-width="1.5" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Settings Panel (Hidden by default) -->
+      <div class="settings-panel" id="settingsPanel" style="display: none;">
+        <div class="setting-row">
+          <span>Target Language</span>
+          <select id="langSelect"></select>
+        </div>
+        <div class="setting-row">
+          <span>Enable Translation</span>
+          <input type="checkbox" id="translateToggle" class="toggle" />
+        </div>
+        <div class="setting-row">
+          <span>Audio (Whisper)</span>
+          <input type="checkbox" id="audioToggle" class="toggle" checked />
+        </div>
+        <div class="setting-row">
+          <span>Video OCR</span>
+          <input type="checkbox" id="ocrToggle" class="toggle" checked />
+        </div>
+      </div>
+
+      <!-- Text Analysis Section -->
+      <div class="section">
+        <div class="section-header">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M2 4h12M2 8h12M2 12h8" stroke="#666" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+          <span>Text Analysis</span>
+        </div>
+
+        <button class="action-btn primary" id="searchScreenBtn">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path
+              d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18Z"
+              stroke="white" stroke-width="1.5" />
+            <path d="M10 6V10L13 13" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+          <span>Check Entire Page</span>
+        </button>
+        <p class="action-description">Capture screenshot once and extract all visible text (OCR)</p>
+
+        <div class="section-header" style="margin-top: 16px;">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M2 4h12M2 8h8M2 12h10" stroke="#666" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+          <span>Selected Content</span>
+        </div>
+
+        <button class="action-btn secondary" id="saveSelectedBtn">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M5 3h10c1.1 0 2 .9 2 2v10c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V5c0-1.1.9-2 2-2z" stroke="white"
+              stroke-width="1.5" />
+            <path d="M9 3v6l2-1.5L13 9V3" stroke="white" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+          <span>Check Selected Text</span>
+        </button>
+        <p class="action-description">First select text on the page, then click this button</p>
+      </div>
+
+      <!-- Media Analysis Section -->
+      <div class="section">
+        <div class="section-header">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M2 6l4-3v10L2 10V6zM14 8a6 6 0 01-1.5 4M12.5 8a4.5 4.5 0 01-1.125 3" stroke="#666"
+              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span>Media Analysis</span>
+        </div>
+
+        <button class="action-btn video" id="startBtn">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <rect x="2" y="4" width="16" height="12" rx="2" stroke="white" stroke-width="1.5" />
+            <path d="M2 8h16M7 4v4M13 4v4" stroke="white" stroke-width="1.5" />
+          </svg>
+          <span>Check Video Only</span>
+        </button>
+        <p class="action-description">Click to START recording video • Click again to STOP</p>
+
+        <button class="action-btn keyframe" id="extractKeyframesBtn">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <rect x="2" y="4" width="16" height="12" rx="2" stroke="white" stroke-width="1.5" />
+            <circle cx="7" cy="10" r="1.5" fill="white" />
+            <circle cx="13" cy="10" r="1.5" fill="white" />
+          </svg>
+          <span>Extract Video Keyframes</span>
+        </button>
+        <p class="action-description">Extract 1 frame every 3 seconds from current video</p>
+      </div>
+
+      <!-- Status -->
+      <div id="status" class="status">Idle</div>
+
+      <!-- Finish Button -->
+      <button class="stop-btn" id="stopBtn">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <rect x="4" y="4" width="8" height="8" rx="1" fill="white" />
+        </svg>
+        <span>Finish & Verify</span>
+      </button>
+    </div>
+
+    <!-- RESULTS VIEW (Hidden by default) -->
+    <div id="results-view" class="hidden">
+      <div class="header">
+        <button id="backBtn" class="back-btn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <h1>Fact Check Report</h1>
+        <div style="width: 24px"></div> <!-- Spacer for centering -->
+      </div>
+
+      <div class="results-content">
+        <!-- Loading -->
+        <div id="loading-state" class="center-content">
+          <div class="spinner"></div>
+          <h2>Verifying Claims...</h2>
+          <p id="progress-text">Processing...</p>
+        </div>
+
+        <!-- Error -->
+        <div id="error-state" class="center-content hidden">
+          <h2>⚠️ Process Failed</h2>
+          <p id="error-message"></p>
+        </div>
+
+        <!-- Results -->
+        <div id="report-content" class="hidden">
+          <div class="summary-card">
+            <div class="stat">
+              <span id="total-claims">0</span>
+              <label>Claims</label>
+            </div>
+            <div class="stat">
+              <span id="false-claims" class="text-red">0</span>
+              <label>False</label>
+            </div>
+            <div class="stat">
+              <span id="verified-claims" class="text-green">0</span>
+              <label>Verified</label>
+            </div>
+          </div>
+
+          <div id="claims-list"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../utils/config.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

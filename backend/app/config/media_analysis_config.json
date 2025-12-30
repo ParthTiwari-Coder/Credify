@@ -1,0 +1,26 @@
+{
+  "feature_flags": {
+    "enable_hashing": true,
+    "enable_reverse_search": true
+  },
+  "hashing": {
+    "hash_threshold": 5,
+    "hash_size": 16,
+    "video_keyframe_interval_seconds": 5
+  },
+  "reverse_search": {
+    "max_sources": 10,
+    "timeout_seconds": 10
+  },
+  "database": {
+    "enabled": true,
+    "connection_pool_min": 1,
+    "connection_pool_max": 10
+  },
+  "notes": {
+    "hashing": "Perceptual hashing detects repetition within the system only. Does not claim original source.",
+    "reverse_search": "Reverse search establishes historical context on the public web. Does not infer private reposts or exact original uploader.",
+    "limitations": "Hashing answers: 'Has this same media appeared before in our system?'. Reverse search answers: 'Has this media appeared earlier on the public web in a different context?'"
+  }
+}
+

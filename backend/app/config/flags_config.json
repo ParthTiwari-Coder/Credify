@@ -1,0 +1,87 @@
+{
+    "REPOSTED_ACROSS_TIME": {
+        "penalty": 20,
+        "category": "media_propagation",
+        "description": "Content reposted across different time periods"
+    },
+    "VIRAL_FORWARDING": {
+        "penalty": 15,
+        "category": "media_propagation",
+        "description": "Content shows signs of viral forwarding patterns"
+    },
+    "CROSS_PLATFORM_RECYCLING": {
+        "penalty": 15,
+        "category": "media_propagation",
+        "description": "Same content recycled across multiple platforms"
+    },
+    "OUT_OF_CONTEXT_IMAGE": {
+        "penalty": 25,
+        "category": "media_propagation",
+        "description": "Image used out of original context"
+    },
+    "EDITED_OR_CROPPED_MEDIA": {
+        "penalty": 10,
+        "category": "media_propagation",
+        "description": "Media appears edited or cropped"
+    },
+    "NO_CLEAR_SOURCE": {
+        "penalty": 20,
+        "category": "source_credibility",
+        "description": "No clear or verifiable source provided"
+    },
+    "UNVERIFIED_UPLOADER": {
+        "penalty": 10,
+        "category": "source_credibility",
+        "description": "Uploader is unverified or unknown"
+    },
+    "MISLEADING_CAPTION": {
+        "penalty": 15,
+        "category": "source_credibility",
+        "description": "Caption is misleading or sensationalized"
+    },
+    "SENSATIONAL_LANGUAGE": {
+        "penalty": 10,
+        "category": "content_pattern",
+        "description": "Uses sensational or emotionally charged language"
+    },
+    "ABSOLUTE_ASSERTION": {
+        "penalty": 10,
+        "category": "content_pattern",
+        "description": "Makes absolute claims without nuance"
+    },
+    "URGENT_SHARING": {
+        "penalty": 10,
+        "category": "content_pattern",
+        "description": "Urges immediate sharing or action"
+    },
+    "NO_EVIDENCE_CITED": {
+        "penalty": 10,
+        "category": "content_pattern",
+        "description": "No evidence or sources cited"
+    },
+    "SCIENTIFIC_OVERSIMPLIFICATION": {
+        "penalty": 10,
+        "category": "content_pattern",
+        "description": "Oversimplifies complex scientific concepts"
+    },
+    "COMMUNAL_FRAMING": {
+        "penalty": 20,
+        "category": "communal_harm",
+        "description": "Frames content along communal or divisive lines"
+    },
+    "BLAME_ASSIGNMENT": {
+        "penalty": 15,
+        "category": "communal_harm",
+        "description": "Assigns blame to specific groups"
+    },
+    "INCITEMENT_RISK": {
+        "penalty": 20,
+        "category": "communal_harm",
+        "description": "Content may incite violence or hatred"
+    },
+    "REWRITTEN_MISINFORMATION": {
+        "penalty": 30,
+        "category": "semantic_detection",
+        "description": "Semantically similar to known misinformation"
+    }
+}
